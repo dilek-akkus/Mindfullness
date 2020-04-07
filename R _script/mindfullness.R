@@ -442,6 +442,26 @@ mindfulness_3[,stai_tl_w_values:= ifelse(is.na(stai_tl_w_values),
                                           stai_tl_values,
                                           stai_tl_w_values)]
 
+#sort out unnecessary colums
+mindfulness_3[, c("sex1",
+                  "missings",
+                  "TSST_Info",
+                  "aa_variables",
+                  "aa_values",
+                  "aa_ln_variables",
+                  "aa_ln_values",
+                  "aa_ln_w_variables",
+                  "aa_ln_w_values",
+                  "aa_inc_ln",
+                  "aa_inc_ln.w",
+                  "zaa_variables",
+                  "zaa_values",
+                  "PSYCH",
+                  "id2b",
+                  "CHR_STR",
+                  "id3",
+                  "PHYSIO"):= NULL]
+
 #save as csv.
 write.csv(x = mindfulness_3,
           file = "~/Desktop/R Mindfullness/mindfulness_final.csv",
